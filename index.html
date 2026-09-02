@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Momo Zhan</title>
+<meta name="description" content="Momo Zhan — Cross-functional Product &amp; Program Manager. Automotive software, ADAS, AI and data. Taipei.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Momo Zhan">
+<meta property="og:description" content="跨域產品／專案管理 — 汽車軟體、ADAS、AI 與資料流。台北。">
+<meta name="theme-color" content="#0A0D13">
+<link rel="icon" href="me.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#0A0D13; --bg-2:#10151E; --bg-3:#141A25;
+    --line:#1E2634; --line-2:#2E3849;
+    --fg:#ECEFF4; --fg-2:#98A2B5; --fg-3:#626D80;
+    --brass:#D4AF6A; --brass-2:#F0D9A8; --brass-dim:#6E5C33;
+    --maxw:1120px;
+    --display:"Syne","Trebuchet MS",sans-serif;
+    --body:"Manrope","Helvetica Neue",Arial,"PingFang TC","Noto Sans TC",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(900px 520px at 78% -8%, rgba(212,175,106,.09), transparent 62%),radial-gradient(700px 480px at 4% 18%, rgba(70,96,140,.10), transparent 60%)}
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 28px 96px}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0 0}
+  .mark{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--fg-3);text-transform:uppercase}
+  .mark b{color:var(--brass);font-weight:500}
+  .langtoggle{display:inline-flex;border:1px solid var(--line-2);border-radius:999px;overflow:hidden;background:rgba(16,21,30,.7)}
+  .langtoggle button{appearance:none;border:0;background:transparent;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-3);padding:7px 14px;transition:color .18s,background .18s}
+  .langtoggle button[aria-pressed="true"]{background:var(--brass);color:#0A0D13;font-weight:500}
+  .langtoggle button:hover:not([aria-pressed="true"]){color:var(--fg)}
+  .langtoggle button:focus-visible{outline:2px solid var(--brass-2);outline-offset:-2px}
+
+  .hero{display:grid;grid-template-columns:230px 1fr;gap:44px;align-items:start;padding:56px 0 46px}
+  .shot{position:relative;width:230px}
+  .shot img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:2px}
+  .bracket{position:absolute;width:22px;height:22px;border:1.5px solid var(--brass)}
+  .bracket.tl{top:-5px;left:-5px;border-right:0;border-bottom:0}
+  .bracket.tr{top:-5px;right:-5px;border-left:0;border-bottom:0}
+  .bracket.bl{bottom:-5px;left:-5px;border-right:0;border-top:0}
+  .bracket.br{bottom:-5px;right:-5px;border-left:0;border-top:0}
+  .detect{position:absolute;left:0;bottom:0;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;background:rgba(10,13,19,.86);color:var(--brass);padding:4px 8px;border-top:1px solid var(--brass-dim);border-right:1px solid var(--brass-dim)}
+
+  .eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:0 0 18px}
+  .name{font-family:var(--display);font-weight:800;font-size:clamp(34px,5.2vw,58px);line-height:.98;letter-spacing:-.02em;margin:0 0 20px;text-wrap:balance}
+  .thesis{font-family:var(--display);font-weight:600;font-size:clamp(19px,2.3vw,26px);line-height:1.32;letter-spacing:-.01em;color:var(--brass-2);margin:0 0 20px;max-width:22em;text-wrap:balance}
+  .lede{margin:0 0 26px;max-width:40em;color:var(--fg-2);font-size:15.5px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2);border:1px solid var(--line-2);border-radius:2px;padding:5px 10px}
+
+  .spec{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+  .spec .row{padding:18px 22px 18px 0;border-right:1px solid var(--line)}
+  .spec .row:last-child{border-right:0}
+  .spec dt{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-3);margin:0 0 7px}
+  .spec dd{margin:0;font-size:14px;color:var(--fg);line-height:1.5}
+
+  section{padding:64px 0 0}
+  .shead{display:flex;align-items:baseline;gap:16px;margin:0 0 32px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .sindex{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--brass)}
+  .stitle{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.01em;margin:0}
+  .snote{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--fg-3);margin-left:auto;text-transform:uppercase}
+
+  .stack{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .layer{display:grid;grid-template-columns:64px 190px 1fr;gap:20px;align-items:center;background:var(--bg-2);padding:16px 20px;transition:background .2s}
+  .layer:hover{background:var(--bg-3)}
+  .segs{display:flex;gap:3px}
+  .seg{width:7px;height:16px;background:#232C3A;border-radius:1px}
+  .seg.on{background:var(--brass)}
+  .lname{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.01em}
+  .lname span{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.14em;color:var(--fg-3);text-transform:uppercase;margin-top:3px}
+  .ldesc{color:var(--fg-2);font-size:13.5px;line-height:1.55}
+
+  .roles{display:flex;flex-direction:column}
+  .role{display:grid;grid-template-columns:150px 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line)}
+  .role:last-child{border-bottom:0}
+  .rmeta{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--fg-3);line-height:1.9}
+  .rmeta .yr{color:var(--brass);display:block;font-size:12.5px;letter-spacing:.1em;margin-bottom:2px}
+  .rtitle{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.005em;margin:0 0 4px}
+  .rorg{font-size:13px;color:var(--fg-2);margin:0 0 14px}
+  .rorg b{color:var(--brass-2);font-weight:600}
+  .rmandate{margin:0 0 16px;color:var(--fg);font-size:14.5px;max-width:44em;border-left:2px solid var(--brass-dim);padding-left:14px}
+  .rlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .rlist li{position:relative;padding-left:18px;color:var(--fg-2);font-size:14px;line-height:1.6;max-width:46em}
+  .rlist li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--brass)}
+
+  .next{border:1px solid var(--line-2);background:var(--bg-2);padding:30px 32px;display:grid;grid-template-columns:1fr 300px;gap:36px;align-items:center}
+  .nstate{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.5;margin:0;max-width:30em;text-wrap:balance}
+  .nroles{display:flex;flex-direction:column;gap:8px}
+  .nrole{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--brass-2);border:1px solid var(--brass-dim);padding:8px 12px;border-radius:2px}
+
+  .kgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px}
+  .kgroup h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:0 0 12px;font-weight:500}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:12px;color:var(--fg-2);background:var(--bg-2);border:1px solid var(--line);padding:4px 9px;border-radius:2px;transition:border-color .18s,color .18s}
+  .chip:hover{border-color:var(--brass-dim);color:var(--fg)}
+
+  .contact{margin-top:64px;padding-top:34px;border-top:1px solid var(--line-2);display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+  .ctitle{font-family:var(--display);font-weight:700;font-size:21px;margin:0;flex:1 1 220px}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.08em;padding:11px 18px;border-radius:2px;transition:background .18s,color .18s,border-color .18s}
+  .btn.primary{background:var(--brass);color:#0A0D13;font-weight:500}
+  .btn.primary:hover{background:var(--brass-2)}
+  .btn.ghost{border:1px solid var(--line-2);color:var(--fg)}
+  .btn.ghost:hover{border-color:var(--brass);color:var(--brass-2)}
+  .btn:focus-visible{outline:2px solid var(--brass-2);outline-offset:3px}
+  .foot{margin-top:34px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--fg-3);text-transform:uppercase}
+
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .hero > *{animation:rise .55s cubic-bezier(.2,.7,.3,1) both}
+  .hero > *:nth-child(2){animation-delay:.07s}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;gap:30px;padding:38px 0 34px}
+    .shot{width:168px}
+    .layer{grid-template-columns:1fr;gap:9px;padding:16px}
+    .role{grid-template-columns:1fr;gap:14px}
+    .next{grid-template-columns:1fr;gap:24px}
+    .spec .row{border-right:0;border-bottom:1px solid var(--line);padding-right:0}
+    .spec .row:last-child{border-bottom:0}
+    .wrap{padding:0 20px 72px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="mark">MOMO ZHAN &nbsp;/&nbsp; <b>PROGRAM &amp; PRODUCT</b></div>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="shot">
+      <img src="me.svg" alt="Momo Zhan">
+      <span class="bracket tl"></span><span class="bracket tr"></span>
+      <span class="bracket bl"></span><span class="bracket br"></span>
+      <span class="detect">PERSON · CONF 0.99</span>
+    </div>
+    <div>
+      <p class="eyebrow" data-zh="跨域產品／專案管理 · 台北 · 開放洽談" data-en="Cross-functional Product &amp; Program · Taipei · Open to conversations"></p>
+      <h1 class="name">MOMO ZHAN</h1>
+      <p class="thesis" data-zh="把還沒有形狀的需求，變成能被驗證、能被量產、能被交付的東西。" data-en="I take demand that has no shape yet and drive it to something validated, buildable and shipped."></p>
+      <p class="lede" data-zh="六年橫跨教育、工業材料、汽車與 AI。我的位置一直在使用者、商業與工程之間 —— 聽懂客戶沒說完的需求，翻譯成工程做得出來的規格，再把跨部門的人帶到同一個交付日期上。" data-en="Six years across education, industrial materials, automotive and AI. I have always worked in the space between users, business and engineering — hearing what a customer has not finished saying, translating it into a spec engineering can build, and getting every function onto the same delivery date."></p>
+      <div class="tags">
+        <span class="tag">Automotive</span>
+        <span class="tag">ADAS / Autonomous Driving</span>
+        <span class="tag">AI &amp; Data</span>
+        <span class="tag">B2B NPI</span>
+      </div>
+    </div>
+  </header>
+
+  <dl class="spec">
+    <div class="row">
+      <dt data-zh="現職" data-en="Now"></dt>
+      <dd data-zh="AI Software PM，鴻海 Foxconn（2024 迄今）" data-en="AI Software PM, Foxconn (2024–present)"></dd>
+    </div>
+    <div class="row">
+      <dt data-zh="領域" data-en="Domain"></dt>
+      <dd data-zh="汽車軟體 · ADAS · AI 模型落地 · 資料流" data-en="Automotive software · ADAS · AI deployment · Data pipeline"></dd>
+    </div>
+    <div class="row">
+      <dt data-zh="最強的一件事" data-en="Sharpest edge"></dt>
+      <dd data-zh="需求盤點 → 跨團隊交付" data-en="Requirement discovery → cross-team delivery"></dd>
+    </div>
+    <div class="row">
+      <dt data-zh="語言／據點" data-en="Language / Base"></dt>
+      <dd data-zh="中文母語 · 英文工作級 · 台北" data-en="Chinese (native) · English (working) · Taipei"></dd>
+    </div>
+  </dl>
+
+  <section>
+    <div class="shead">
+      <span class="sindex">01</span>
+      <h2 class="stitle" data-zh="能力是一層一層疊上去的" data-en="The stack, built one layer at a time"></h2>
+      <span class="snote" data-zh="每一層都還在用" data-en="Every layer still in use"></span>
+    </div>
+    <div class="stack">
+      <div class="layer">
+        <div class="segs"><i class="seg on"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div>
+        <div class="lname" data-zh="理解人" data-en="People"><span>User · Customer · Stakeholder</span></div>
+        <div class="ldesc" data-zh="教育內容時期建立。從對方的語言裡，找出他自己還沒說清楚的問題。" data-en="Built in education. Finding the problem inside what someone has not yet managed to articulate."></div>
+      </div>
+      <div class="layer">
+        <div class="segs"><i class="seg on"></i><i class="seg on"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div>
+        <div class="lname" data-zh="理解商業" data-en="Business"><span>Market · Cost · Supply · Deal</span></div>
+        <div class="ldesc" data-zh="B2B 代理商時期建立。報價、毛利、供應鏈、付款條件，以及誰才是真正的決策者。" data-en="Built in B2B distribution. Quoting, margin, supply chain, payment terms — and who actually holds the decision."></div>
+      </div>
+      <div class="layer">
+        <div class="segs"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg"></i><i class="seg"></i></div>
+        <div class="lname" data-zh="理解產品" data-en="Product"><span>Requirement · Solution · NPI</span></div>
+        <div class="ldesc" data-zh="材料導入案時期建立。EVT → DVT → PVT，第一次看見一個想法怎麼變成可量產的東西。" data-en="Built on material design-ins. EVT → DVT → PVT — the first time I watched an idea become something manufacturable."></div>
+      </div>
+      <div class="layer">
+        <div class="segs"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg"></i></div>
+        <div class="lname" data-zh="理解技術" data-en="Technology"><span>Software · AI · Vehicle · Data</span></div>
+        <div class="ldesc" data-zh="汽車軟體時期建立。感知、融合、感測器整合、時間同步、資料流與模型落地。" data-en="Built in automotive software. Perception, fusion, sensor integration, time sync, data pipelines and model deployment."></div>
+      </div>
+      <div class="layer">
+        <div class="segs"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></div>
+        <div class="lname" data-zh="整合交付" data-en="Program"><span>People × Product × Tech × Business</span></div>
+        <div class="ldesc" data-zh="現在做的事。把上面四層綁在同一個時程上，並且真的交出去。" data-en="What I do now. Binding all four layers to one schedule — and actually shipping it."></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead">
+      <span class="sindex">02</span>
+      <h2 class="stitle" data-zh="經歷" data-en="Experience"></h2>
+      <span class="snote" data-zh="專案代號已依保密要求模糊處理" data-en="Project code names generalized for confidentiality"></span>
+    </div>
+
+    <div class="roles">
+
+      <article class="role">
+        <div class="rmeta">
+          <span class="yr">2024.01 —</span>
+          <span data-zh="現在" data-en="Present"></span><br>
+          <span data-zh="台北 · 中央單位" data-en="Taipei · Corporate"></span>
+        </div>
+        <div>
+          <h3 class="rtitle">AI Software Product Manager</h3>
+          <p class="rorg"><b data-zh="鴻海 Foxconn" data-en="Foxconn"></b> <span data-zh="· 汽車軟體與 AI 應用" data-en="· Automotive software &amp; AI applications"></span></p>
+          <p class="rmandate" data-zh="從應用層需求，一路管到實車整合、資料流建置與對外技術展演。" data-en="From application-layer requirements all the way to vehicle integration, data infrastructure and public technology demonstration."></p>
+          <ul class="rlist">
+            <li data-zh="主導與國內整車廠的自動停車軟體專案：定義雙方分工、交付邊界與時程，目標是取代既有 Tier1 供應商。" data-en="Led an automated-parking software program with a domestic OEM: defined the split of work, delivery boundary and schedule, with the goal of displacing the incumbent Tier 1."></li>
+            <li data-zh="主持橫跨六個軟體模組（定位／感知／融合／路徑規劃／時間服務／視覺化）的 WBS 會議，收斂介面定義與網路頻寬估算。" data-en="Chaired the WBS across six software modules (localization, perception, fusion, planner, time service, visualization), converging interface definitions and bandwidth budgets."></li>
+            <li data-zh="建立資料收集車隊的錄製、時間同步（PTP／gPTP）與資料匯出流程；評估國際標註供應商，以 frames／km 完成 1,100 km 標註成本試算與預算簽核。" data-en="Built the recording, time-synchronization (PTP/gPTP) and export pipeline for the data-collection fleet; benchmarked international annotation vendors and costed 1,100 km on a frames-per-km basis for budget approval."></li>
+            <li data-zh="推動 NVIDIA 端到端（E2E）自動駕駛模型的落地評估：在車上算力限制下改採結構相近的小模型，交付 10 FPS 推論 pipeline 與可調參數清單給控制團隊。" data-en="Drove the feasibility program for an NVIDIA end-to-end autonomous-driving model: swapped to a structurally similar smaller model under on-vehicle compute limits, and handed the control team a 10 FPS inference pipeline with a tuned parameter set."></li>
+            <li data-zh="負責 NVIDIA GTC 與鴻海科技日的技術展演：Demo 路線與情境規劃、展品與動線設計、英文對外講稿。" data-en="Owned technology demonstrations at NVIDIA GTC and Hon Hai Tech Day: demo routes and scenarios, exhibit and visitor-flow design, English-language narrative."></li>
+            <li data-zh="車輛 AI 影像偵測功能上線優化：更換偵測模型提升辨識率，並以降幀率／降解析度／減鏡頭三方案解決 CPU 滿載與錄影掉幀。" data-en="Shipped an on-vehicle AI detection feature: raised recall by switching detection models, and resolved CPU saturation and dropped frames by validating three trade-offs — frame rate, resolution and camera count."></li>
+            <li data-zh="以 AI 協助需求分析、設計、測試與交付，建立團隊可重複使用的標準化 Prompt 與 Workflow。" data-en="Introduced AI-assisted requirement analysis, design, testing and delivery, standardizing reusable prompts and workflows for the team."></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="rmeta">
+          <span class="yr">2022.06 —</span>
+          <span>2024.01</span><br>
+          <span data-zh="台北 · B2B" data-en="Taipei · B2B"></span>
+        </div>
+        <div>
+          <h3 class="rtitle" data-zh="市場開發 / 總經理特助" data-en="Business Development / Assistant to GM"></h3>
+          <p class="rorg"><b data-zh="合通企業 Hetone" data-en="Hetone Enterprise"></b> <span data-zh="· Henkel（漢高）工業接著與封裝材料" data-en="· Henkel industrial adhesives &amp; encapsulation"></span></p>
+          <p class="rmandate" data-zh="切入電動車、汽車電子與伺服器供應鏈，把材料賣進客戶的產線之前，先把客戶的問題定義清楚。" data-en="Opened the EV, automotive-electronics and server supply chains — defining the customer's problem before any material reached their line."></p>
+          <ul class="rlist">
+            <li data-zh="自建 15 項結構化需求盤點法（材質、接著面積、固化條件、耐溫、冷熱衝擊、單件用量、年產量、既有競品、產線設備、驗證要求），把「我需要一個膠」翻譯成可報價的規格。" data-en="Built a 15-point requirement-discovery framework (substrate, bond area, cure condition, thermal range, thermal shock, per-unit volume, annual volume, incumbent competitor, line equipment, validation) that turned a vague “we need an adhesive” into a quotable spec."></li>
+            <li data-zh="管理數十件材料導入案，貫穿 EVT → DVT → PVT：送樣、驗證測試、報價、毛利控管到量產轉換。" data-en="Managed dozens of design-ins end to end across EVT → DVT → PVT: sampling, validation testing, quotation, margin control and transfer to mass production."></li>
+            <li data-zh="開發整車廠、電池與電控、車用鏡頭模組、電源與伺服器客戶群，一年累積數百筆客戶接觸與跟進紀錄。" data-en="Developed accounts across OEMs, battery and power electronics, automotive camera modules, power supply and server, logging several hundred customer touchpoints a year."></li>
+            <li data-zh="建立完整 Stakeholder Mapping：RD → 機構 → 採購 → 驗證 → 工廠，理解一個案子要過幾道關才算真的成立。" data-en="Mapped the full stakeholder chain — R&amp;D → mechanical → procurement → validation → factory — and learned how many gates a win actually has to clear."></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="rmeta">
+          <span class="yr">2020.05 —</span>
+          <span>2021.08</span><br>
+          <span data-zh="台北 · 教育" data-en="Taipei · Education"></span>
+        </div>
+        <div>
+          <h3 class="rtitle" data-zh="教育專案 / 內容設計" data-en="Program &amp; Content Design"></h3>
+          <p class="rorg"><b data-zh="原點學用 LearnTake" data-en="LearnTake"></b> <span data-zh="· 跨領域教育內容" data-en="· Cross-disciplinary education"></span></p>
+          <p class="rmandate" data-zh="從使用者出發做內容設計。這段是我 Design 與 User 思維真正的起點。" data-en="Content designed from the user inward. This is where the design and user instincts actually started."></p>
+          <ul class="rlist">
+            <li data-zh="規劃並執行課程、講座、營隊與企業內訓，與學校、政府及民間機構合作。" data-en="Planned and delivered courses, talks, camps and corporate training in partnership with schools, government bodies and civic institutions."></li>
+            <li data-zh="設計「設計 × 科技 × 職涯」跨領域內容，把抽象的生涯焦慮拆解成可操作的解法。" data-en="Designed cross-disciplinary content at the intersection of design, technology and career — turning abstract anxiety into workable next steps."></li>
+            <li data-zh="公開演說累積 2,500+ 名受眾；作品集涵蓋產品設計、企業識別與視覺設計。" data-en="Spoke to an audience of 2,500+; portfolio spans product design, corporate identity and visual design."></li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="shead">
+      <span class="sindex">03</span>
+      <h2 class="stitle" data-zh="下一步" data-en="What's next"></h2>
+      <span class="snote" data-zh="歡迎來談" data-en="Open to conversations"></span>
+    </div>
+    <div class="next">
+      <p class="nstate" data-zh="我想去的位置，是產品、設計與專案管理的交集 —— 參與的不只是「怎麼把事情做完」，而是「我們到底該做什麼，以及怎麼讓它成為一個真正好的產品」。" data-en="The seat I want sits where product, design and program management overlap — not just “how do we get this done”, but “what should we be building, and what makes it genuinely good”."></p>
+      <div class="nroles">
+        <span class="nrole">Product Program Manager</span>
+        <span class="nrole">Technical Program Manager · AI</span>
+        <span class="nrole">Design-aware Product Manager</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead">
+      <span class="sindex">04</span>
+      <h2 class="stitle" data-zh="關鍵字" data-en="Keywords"></h2>
+      <span class="snote">SEARCHABLE</span>
+    </div>
+    <div class="kgrid">
+      <div class="kgroup">
+        <h4>Domain</h4>
+        <div class="chips">
+          <span class="chip">Automotive</span><span class="chip">ADAS</span><span class="chip">Autonomous Driving</span><span class="chip">Electric Vehicle</span><span class="chip">AI / Physical AI</span><span class="chip">Data Pipeline</span><span class="chip">B2B Industrial Materials</span><span class="chip">NPI</span>
+        </div>
+      </div>
+      <div class="kgroup">
+        <h4>Function</h4>
+        <div class="chips">
+          <span class="chip">Product Management</span><span class="chip">Program Management</span><span class="chip">Business Development</span><span class="chip">Requirement Analysis</span><span class="chip">Stakeholder Management</span><span class="chip">Vendor Management</span><span class="chip">Cross-functional Delivery</span><span class="chip">Technology Demonstration</span>
+        </div>
+      </div>
+      <div class="kgroup">
+        <h4>Technical</h4>
+        <div class="chips">
+          <span class="chip">Perception</span><span class="chip">Sensor Fusion</span><span class="chip">Path Planning</span><span class="chip">Localization</span><span class="chip">Camera / LiDAR / Radar</span><span class="chip">GNSS / IMU</span><span class="chip">CAN / DBC</span><span class="chip">PTP Time Sync</span><span class="chip">NVIDIA Orin / Thor</span><span class="chip">End-to-End Model</span><span class="chip">VLM / VLA</span><span class="chip">Data Collection &amp; Labeling</span>
+        </div>
+      </div>
+      <div class="kgroup">
+        <h4>Business</h4>
+        <div class="chips">
+          <span class="chip">EVT / DVT / PVT</span><span class="chip">BOM</span><span class="chip">Quotation &amp; Costing</span><span class="chip">Supplier Management</span><span class="chip">RFQ</span><span class="chip">PoC → Mass Production</span><span class="chip">Budget Proposal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact">
+    <h2 class="ctitle" data-zh="想聊聊，直接找我。" data-en="Let's talk."></h2>
+    <a class="btn primary" href="mailto:momo90260@gmail.com">momo90260@gmail.com</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/zhanmomo/" target="_blank" rel="noopener">LINKEDIN &nbsp;↗</a>
+  </div>
+  <div class="foot" data-zh="最後更新 2026.09 · 專案名稱與客戶名稱已依保密要求模糊處理" data-en="Updated 2026.09 · Project and customer names generalized for confidentiality"></div>
+
+</div>
+
+<script>
+(function(){
+  var nodes = document.querySelectorAll('[data-zh][data-en]');
+  var btns = document.querySelectorAll('.langtoggle button');
+  function set(lang){
+    nodes.forEach(function(n){ n.textContent = n.getAttribute('data-' + lang); });
+    btns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    document.documentElement.lang = (lang === 'zh') ? 'zh-Hant' : 'en';
+    try { localStorage.setItem('momo-lang', lang); } catch(e){}
+  }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ set(b.dataset.lang); }); });
+  var saved = 'zh';
+  try { saved = localStorage.getItem('momo-lang') || 'zh'; } catch(e){}
+  set(saved);
+})();
+</script>
+</body>
+</html>

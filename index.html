@@ -38,9 +38,9 @@ img{max-width:100%}
 
 .nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);background:rgba(7,17,16,.82);border-bottom:1px solid var(--line)}
 .nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 26px;display:flex;align-items:center;gap:20px}
-.logo{display:flex;align-items:baseline;gap:9px;text-decoration:none;flex:0 0 auto}
-.logo .nm{font-family:var(--display);font-weight:600;font-size:23px;letter-spacing:-.022em;color:var(--fg);line-height:1}
-.logo .tg{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;color:var(--gold);border:1px solid var(--gold-dim);border-radius:999px;padding:2px 8px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto}
+.logo .nm{font-family:var(--display);font-weight:600;font-size:23px;letter-spacing:-.022em;color:var(--fg);line-height:1;display:block;transform:translateY(1px)}
+.logo .tg{font-family:var(--mono);font-size:9.5px;line-height:1;letter-spacing:.22em;text-indent:.22em;color:var(--gold);border:1px solid var(--gold-dim);border-radius:999px;padding:5px 9px;display:block}
 .navlinks{margin-left:auto;display:flex;gap:2px}
 .navlinks a{font-family:var(--display);font-size:13.5px;color:var(--fg-2);text-decoration:none;padding:7px 13px;border-radius:999px;transition:color .2s,background .2s}
 .navlinks a:hover,.navlinks a.on{color:var(--fg);background:rgba(255,255,255,.05)}
@@ -208,6 +208,7 @@ html[lang="zh-Hant"] .mfinal b{font-family:"Helvetica Neue",Helvetica,Arial,sans
   .sec{padding:62px 0 0}
 }
 </style>
+<link rel="stylesheet" href="style-tweaks.css">
 </head>
 <body>
 <script>document.documentElement.className+=" js";</script>
